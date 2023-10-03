@@ -6,6 +6,7 @@ use App\Models\About;
 use App\Models\Client;
 use App\Models\Fact;
 use App\Models\Profile;
+use App\Models\Youtube;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -16,7 +17,8 @@ class HomeController extends Controller
         $about = About::find(1);
         $clients = Client::where('status', 1)->take(6)->latest()->get();
         $fact = Fact::find(1);
+        $youtube = Youtube::find(1);
 
-        return view('welcome', compact('profile', 'about', 'clients', 'fact'));
+        return view('welcome', compact('profile', 'about', 'clients', 'fact', 'youtube'));
     }
 }

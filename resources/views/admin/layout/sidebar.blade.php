@@ -127,17 +127,15 @@
                         <li>
                             <a href="#sidebarTasks" data-bs-toggle="collapse">
                                 <i class="mdi mdi-clipboard-multiple-outline"></i>
-                                <span> Tasks </span>
+                                <span> Youtube </span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <div class="collapse" id="sidebarTasks">
                                 <ul class="nav-second-level">
                                     <li>
-                                        <a href="task-list.html">List</a>
+                                        <a href="{{ route('youtube') }}">Update Youtube</a>
                                     </li>
-                                    <li>
-                                        <a href="task-details.html">Details</a>
-                                    </li>
+
 
                                 </ul>
                             </div>

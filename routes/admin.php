@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\FactController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\YoutubeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 
@@ -43,6 +44,10 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::get('/fact', [FactController::class, 'index'])->name('fact');
         Route::post('/fact/update', [FactController::class, 'update'])->name('fact-update');
+
+
+        Route::get('/youtube', [YoutubeController::class, 'index'])->name('youtube');
+        Route::post('/youtube/update', [YoutubeController::class, 'update'])->name('youtube-update');
 
     });
 });

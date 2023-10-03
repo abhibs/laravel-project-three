@@ -203,7 +203,7 @@
         <!-- ======= Call To Action Section ======= -->
         <section id="call-to-action" class="call-to-action">
             <div class="container text-center" data-aos="zoom-out">
-                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
+                <a href="{{ $youtube->url }}" class="glightbox play-btn"></a>
 
             </div>
         </section><!-- End Call To Action Section -->
