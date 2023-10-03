@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Client;
 use App\Models\Profile;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,8 @@ class HomeController extends Controller
     {
         $profile = Profile::find(1);
         $about = About::find(1);
+        $clients = Client::where('status', 1)->take(6)->latest()->get();
 
-        return view('welcome', compact('profile', 'about'));
+        return view('welcome', compact('profile', 'about', 'clients'));
     }
 }

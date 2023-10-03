@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
@@ -28,6 +29,15 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::get('/about', [AboutController::class, 'index'])->name('about');
         Route::post('/about/update', [AboutController::class, 'update'])->name('about-update');
+
+        Route::get('/client/create', [ClientController::class, 'create'])->name('client-create');
+        Route::post('/client/store', [ClientController::class, 'store'])->name('client-store');
+        Route::get('/client', [ClientController::class, 'index'])->name('client');
+        Route::get('/client/edit/{id}', [ClientController::class, 'edit'])->name('client-edit');
+        Route::post('/client/update', [ClientController::class, 'update'])->name('client-update');
+        Route::get('/client/delete/{id}', [ClientController::class, 'delete'])->name('client-delete');
+        Route::get('/client/inactive/{id}', [ClientController::class, 'inactive'])->name('client-inactive');
+        Route::get('/client/active/{id}', [ClientController::class, 'active'])->name('client-active');
 
     });
 });
