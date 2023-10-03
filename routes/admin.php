@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CertificateController;
 use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\FactController;
+use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ProjectController;
@@ -110,6 +111,16 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('package/delete/{id}', [PackageController::class, 'delete'])->name('package-delete');
         Route::get('package/inactive/{id}', [PackageController::class, 'inactive'])->name('package-inactive');
         Route::get('package/active/{id}', [PackageController::class, 'active'])->name('package-active');
+
+
+        Route::get('faq/create', [FaqController::class, 'create'])->name('faq-create');
+        Route::post('faq/store', [FaqController::class, 'store'])->name('faq-store');
+        Route::get('faq', [FaqController::class, 'index'])->name('faq');
+        Route::get('faq/edit/{id}', [FaqController::class, 'edit'])->name('faq-edit');
+        Route::post('faq/update', [FaqController::class, 'update'])->name('faq-update');
+        Route::get('faq/delete/{id}', [FaqController::class, 'delete'])->name('faq-delete');
+        Route::get('faq/inactive/{id}', [FaqController::class, 'inactive'])->name('faq-inactive');
+        Route::get('faq/active/{id}', [FaqController::class, 'active'])->name('faq-active');
 
     });
 });

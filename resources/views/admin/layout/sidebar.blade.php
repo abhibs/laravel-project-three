@@ -257,7 +257,7 @@
                             </div>
                         </li>
 
-                        <li>
+                        {{-- <li>
                             <a href="#sidebarExtendedui" data-bs-toggle="collapse">
                                 <i class="mdi mdi-layers-outline"></i>
                                 <span class="badge bg-info float-end">Hot</span>
@@ -274,28 +274,23 @@
 
                                 </ul>
                             </div>
-                        </li>
+                        </li> --}}
 
-                        <li>
-                            <a href="widgets.html">
-                                <i class="mdi mdi-gift-outline"></i>
-                                <span> Widgets </span>
-                            </a>
-                        </li>
+
 
                         <li>
                             <a href="#sidebarIcons" data-bs-toggle="collapse">
                                 <i class="mdi mdi-bullseye"></i>
-                                <span> Icons </span>
+                                <span> Faq </span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <div class="collapse" id="sidebarIcons">
                                 <ul class="nav-second-level">
                                     <li>
-                                        <a href="icons-material-symbols.html">Material Symbols Icons</a>
+                                        <a href="{{ route('faq-create') }}">Add Faq</a>
                                     </li>
                                     <li>
-                                        <a href="icons-two-tone.html">Two Tone Icons</a>
+                                        <a href="{{ route('faq') }}">All Faqs</a>
                                     </li>
 
                                 </ul>

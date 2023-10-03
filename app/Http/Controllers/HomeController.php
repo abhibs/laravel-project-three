@@ -6,6 +6,7 @@ use App\Models\About;
 use App\Models\Certificate;
 use App\Models\Client;
 use App\Models\Fact;
+use App\Models\Faq;
 use App\Models\Package;
 use App\Models\Profile;
 use App\Models\Review;
@@ -26,8 +27,9 @@ class HomeController extends Controller
         $reviews = Review::where('status', 1)->get();
         $teamdatas = Team::where('status', 1)->get();
         $packagedatas = Package::where('status', 1)->get();
+        $faqdatas = Faq::where('status', 1)->latest()->get();
 
 
-        return view('welcome', compact('profile', 'about', 'clients', 'fact', 'youtube', 'certificates', 'reviews', 'teamdatas', 'packagedatas'));
+        return view('welcome', compact('profile', 'about', 'clients', 'fact', 'youtube', 'certificates', 'reviews', 'teamdatas', 'packagedatas', 'faqdatas'));
     }
 }
