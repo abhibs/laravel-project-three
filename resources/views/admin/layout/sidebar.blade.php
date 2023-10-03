@@ -37,7 +37,7 @@
 
                         </div>
                     </div>
-                    <p class="text-muted">Admin Head</p>
+                    <p class="text-mutQuam adipiscing vitae proined">Admin Head</p>
                 </div>
 
                 <!--- Sidemenu -->
@@ -241,16 +241,16 @@
                         <li>
                             <a href="#sidebarBaseui" data-bs-toggle="collapse">
                                 <i class="mdi mdi-black-mesa"></i>
-                                <span> Base UI </span>
+                                <span> Package </span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <div class="collapse" id="sidebarBaseui">
                                 <ul class="nav-second-level">
                                     <li>
-                                        <a href="ui-buttons.html">Buttons</a>
+                                        <a href="{{ route('package-create') }}">Add Package</a>
                                     </li>
                                     <li>
-                                        <a href="ui-cards.html">Cards</a>
+                                        <a href="{{ route('package') }}">All Packages</a>
                                     </li>
 
                                 </ul>

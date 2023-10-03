@@ -6,6 +6,7 @@ use App\Models\About;
 use App\Models\Certificate;
 use App\Models\Client;
 use App\Models\Fact;
+use App\Models\Package;
 use App\Models\Profile;
 use App\Models\Review;
 use App\Models\Team;
@@ -24,8 +25,9 @@ class HomeController extends Controller
         $certificates = Certificate::where('status', 1)->inRandomOrder()->get();
         $reviews = Review::where('status', 1)->get();
         $teamdatas = Team::where('status', 1)->get();
+        $packagedatas = Package::where('status', 1)->get();
 
 
-        return view('welcome', compact('profile', 'about', 'clients', 'fact', 'youtube', 'certificates', 'reviews', 'teamdatas'));
+        return view('welcome', compact('profile', 'about', 'clients', 'fact', 'youtube', 'certificates', 'reviews', 'teamdatas', 'packagedatas'));
     }
 }

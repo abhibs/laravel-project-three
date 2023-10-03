@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CertificateController;
 use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\FactController;
+use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\ReviewController;
@@ -100,6 +101,15 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('team/delete/{id}', [TeamController::class, 'delete'])->name('team-delete');
         Route::get('team/inactive/{id}', [TeamController::class, 'inactive'])->name('team-inactive');
         Route::get('team/active/{id}', [TeamController::class, 'active'])->name('team-active');
+
+        Route::get('package/create', [PackageController::class, 'create'])->name('package-create');
+        Route::post('package/store', [PackageController::class, 'store'])->name('package-store');
+        Route::get('package', [PackageController::class, 'index'])->name('package');
+        Route::get('package/edit/{id}', [PackageController::class, 'edit'])->name('package-edit');
+        Route::post('package/update/{id}', [PackageController::class, 'update'])->name('package-update');
+        Route::get('package/delete/{id}', [PackageController::class, 'delete'])->name('package-delete');
+        Route::get('package/inactive/{id}', [PackageController::class, 'inactive'])->name('package-inactive');
+        Route::get('package/active/{id}', [PackageController::class, 'active'])->name('package-active');
 
     });
 });
