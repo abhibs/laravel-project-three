@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Certificate;
 use App\Models\Client;
 use App\Models\Fact;
 use App\Models\Profile;
@@ -18,7 +19,8 @@ class HomeController extends Controller
         $clients = Client::where('status', 1)->take(6)->latest()->get();
         $fact = Fact::find(1);
         $youtube = Youtube::find(1);
+        $certificates = Certificate::where('status', 1)->inRandomOrder()->get();
 
-        return view('welcome', compact('profile', 'about', 'clients', 'fact', 'youtube'));
+        return view('welcome', compact('profile', 'about', 'clients', 'fact', 'youtube', 'certificates'));
     }
 }

@@ -144,16 +144,16 @@
                         <li>
                             <a href="#sidebarContacts" data-bs-toggle="collapse">
                                 <i class="mdi mdi-book-account-outline"></i>
-                                <span> Contacts </span>
+                                <span> Certificate </span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <div class="collapse" id="sidebarContacts">
                                 <ul class="nav-second-level">
                                     <li>
-                                        <a href="contacts-list.html">Members List</a>
+                                        <a href="{{ route('certificate-create') }}">Add Certificate</a>
                                     </li>
                                     <li>
-                                        <a href="contacts-profile.html">Profile</a>
+                                        <a href="{{ route('certificate') }}">All Certificate</a>
                                     </li>
                                 </ul>
                             </div>
