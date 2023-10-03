@@ -7,6 +7,7 @@ use App\Models\Certificate;
 use App\Models\Client;
 use App\Models\Fact;
 use App\Models\Profile;
+use App\Models\Review;
 use App\Models\Youtube;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,8 @@ class HomeController extends Controller
         $fact = Fact::find(1);
         $youtube = Youtube::find(1);
         $certificates = Certificate::where('status', 1)->inRandomOrder()->get();
+        $reviews = Review::where('status', 1)->get();
 
-        return view('welcome', compact('profile', 'about', 'clients', 'fact', 'youtube', 'certificates'));
+        return view('welcome', compact('profile', 'about', 'clients', 'fact', 'youtube', 'certificates', 'reviews'));
     }
 }

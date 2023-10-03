@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CertificateController;
 use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\FactController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\YoutubeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
@@ -59,6 +60,16 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/certificate/delete/{id}', [CertificateController::class, 'delete'])->name('certificate-delete');
         Route::get('/certificate/inactive/{id}', [CertificateController::class, 'inactive'])->name('certificate-inactive');
         Route::get('/certificate/active/{id}', [CertificateController::class, 'active'])->name('certificate-active');
+
+
+        Route::get('/review/create', [ReviewController::class, 'create'])->name('review-create');
+        Route::post('/review/store', [ReviewController::class, 'store'])->name('review-store');
+        Route::get('/review', [ReviewController::class, 'index'])->name('review');
+        Route::get('/review/edit/{id}', [ReviewController::class, 'edit'])->name('review-edit');
+        Route::post('/review/update', [ReviewController::class, 'update'])->name('review-update');
+        Route::get('/review/delete/{id}', [ReviewController::class, 'delete'])->name('review-delete');
+        Route::get('/review/inactive/{id}', [ReviewController::class, 'inactive'])->name('review-inactive');
+        Route::get('/review/active/{id}', [ReviewController::class, 'active'])->name('review-active');
 
     });
 });

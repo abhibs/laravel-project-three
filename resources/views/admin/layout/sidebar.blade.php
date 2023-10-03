@@ -162,16 +162,16 @@
                         <li>
                             <a href="#sidebarTickets" data-bs-toggle="collapse">
                                 <i class="mdi mdi-lifebuoy"></i>
-                                <span> Tickets </span>
+                                <span> Review </span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <div class="collapse" id="sidebarTickets">
                                 <ul class="nav-second-level">
                                     <li>
-                                        <a href="tickets-list.html">List</a>
+                                        <a href="{{ route('review-create') }}">Add Review</a>
                                     </li>
                                     <li>
-                                        <a href="tickets-detail.html">Detail</a>
+                                        <a href="{{ route('review') }}">All Review</a>
                                     </li>
                                 </ul>
                             </div>
