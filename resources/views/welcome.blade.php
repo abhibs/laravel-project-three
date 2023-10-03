@@ -127,25 +127,17 @@
 
                 <div class="row gy-4">
                     <div class="col-lg-6">
-                        <h3>Voluptatem dignissimos provident quasi corporis</h3>
-                        <img src="{{ asset('user/assets/img/about.jpg') }}" class="img-fluid rounded-4 mb-4"
-                            alt="">
-                        <p>Ut fugiat ut sunt quia veniam. Voluptate perferendis perspiciatis quod nisi et. Placeat
-                            debitis quia recusandae odit et consequatur voluptatem. Dignissimos pariatur consectetur
-                            fugiat voluptas ea.</p>
-                        <p>Temporibus nihil enim deserunt sed ea. Provident sit expedita aut cupiditate nihil vitae quo
-                            officia vel. Blanditiis eligendi possimus et in cum. Quidem eos ut sint rem veniam qui. Ut
-                            ut repellendus nobis tempore doloribus debitis explicabo similique sit. Accusantium sed ut
-                            omnis beatae neque deleniti repellendus.</p>
+                        <h3>{{ $about->name }}</h3>
+                        <img src="{{ asset($about->image) }}" class="img-fluid rounded-4 mb-4" alt="">
+                        {!! $about->content !!}
                     </div>
                     <div class="col-lg-6">
                         <div class="content ps-0 ps-lg-5">
 
 
                             <div class="position-relative mt-4">
-                                <img src="{{ asset('user/assets/img/about-2.jpg') }}" class="img-fluid rounded-4"
-                                    alt="">
-                                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
+                                <img src="{{ asset($about->youtube) }}" class="img-fluid rounded-4" alt="">
+                                <a href="{{ $about->url }}" class="glightbox play-btn"></a>
                             </div>
                         </div>
                     </div>

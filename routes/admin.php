@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
@@ -25,6 +26,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/profile/detail', [ProfileController::class, 'index'])->name('profile');
         Route::post('/profile/detail/update', [ProfileController::class, 'update'])->name('profile-update');
 
+        Route::get('/about', [AboutController::class, 'index'])->name('about');
+        Route::post('/about/update', [AboutController::class, 'update'])->name('about-update');
 
     });
 });
