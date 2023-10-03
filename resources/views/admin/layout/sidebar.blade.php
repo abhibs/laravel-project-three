@@ -180,19 +180,40 @@
 
 
 
-                        <li>
+                        {{-- <li>
                             <a href="#sidebarAuth" data-bs-toggle="collapse">
                                 <i class="mdi mdi-account-circle-outline"></i>
-                                <span> Auth Pages </span>
+                                <span> Category </span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <div class="collapse" id="sidebarAuth">
                                 <ul class="nav-second-level">
                                     <li>
-                                        <a href="auth-login.html">Log In</a>
+                                        <a href="{{ route('category-create') }}">Add Category </a>
                                     </li>
                                     <li>
-                                        <a href="auth-login-2.html">Log In 2</a>
+                                        <a href="{{ route('category') }}">All Categories</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li> --}}
+
+
+
+                        <li>
+                            <a href="#sidebarLayouts" data-bs-toggle="collapse">
+                                <i class="mdi mdi-cellphone-link"></i>
+                                <span class="badge bg-blue float-end">New</span>
+                                <span> Project </span>
+                            </a>
+                            <div class="collapse" id="sidebarLayouts">
+                                <ul class="nav-second-level">
+                                    <li>
+                                        <a href="{{ route('project-create') }}">Add Project</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('project') }}">All Projects</a>
                                     </li>
 
                                 </ul>
@@ -217,27 +238,6 @@
                                 </ul>
                             </div>
                         </li>
-
-                        <li>
-                            <a href="#sidebarLayouts" data-bs-toggle="collapse">
-                                <i class="mdi mdi-cellphone-link"></i>
-                                <span class="badge bg-blue float-end">New</span>
-                                <span> Layouts </span>
-                            </a>
-                            <div class="collapse" id="sidebarLayouts">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="layouts-horizontal.html">Horizontal</a>
-                                    </li>
-                                    <li>
-                                        <a href="layouts-detached.html">Detached</a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </li>
-
-
                         <li>
                             <a href="#sidebarBaseui" data-bs-toggle="collapse">
                                 <i class="mdi mdi-black-mesa"></i>

@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CertificateController;
 use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\FactController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\YoutubeController;
 use Illuminate\Support\Facades\Route;
@@ -70,6 +72,24 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/review/delete/{id}', [ReviewController::class, 'delete'])->name('review-delete');
         Route::get('/review/inactive/{id}', [ReviewController::class, 'inactive'])->name('review-inactive');
         Route::get('/review/active/{id}', [ReviewController::class, 'active'])->name('review-active');
+
+
+        Route::get('/category/create', [CategoryController::class, 'create'])->name('category-create');
+        Route::post('/category/store', [CategoryController::class, 'store'])->name('category-store');
+        Route::get('/category', [CategoryController::class, 'index'])->name('category');
+        Route::get('/category/edit/{id}', [CategoryController::class, 'edit'])->name('category-edit');
+        Route::post('/category/update', [CategoryController::class, 'update'])->name('category-update');
+        Route::get('/category/delete/{id}', [CategoryController::class, 'delete'])->name('category-delete');
+
+
+        Route::get('/project/create', [ProjectController::class, 'create'])->name('project-create');
+        Route::post('/project/store', [ProjectController::class, 'store'])->name('project-store');
+        Route::get('/project', [ProjectController::class, 'index'])->name('project');
+        Route::get('/project/edit/{id}', [ProjectController::class, 'edit'])->name('project-edit');
+        Route::post('/project/update', [ProjectController::class, 'update'])->name('project-update');
+        Route::get('/project/delete/{id}', [ProjectController::class, 'delete'])->name('project-delete');
+        Route::get('/project/inactive/{id}', [ProjectController::class, 'inactive'])->name('project-inactive');
+        Route::get('/project/active/{id}', [ProjectController::class, 'active'])->name('project-active');
 
     });
 });
