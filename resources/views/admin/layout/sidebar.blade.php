@@ -223,16 +223,16 @@
                         <li>
                             <a href="#sidebarExpages" data-bs-toggle="collapse">
                                 <i class="mdi mdi-text-box-multiple-outline"></i>
-                                <span> Extra Pages </span>
+                                <span> Team </span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <div class="collapse" id="sidebarExpages">
                                 <ul class="nav-second-level">
                                     <li>
-                                        <a href="pages-starter.html">Starter</a>
+                                        <a href="{{ route('team-create') }}">Add Team</a>
                                     </li>
                                     <li>
-                                        <a href="pages-timeline.html">Timeline</a>
+                                        <a href="{{ route('team') }}">All Teams</a>
                                     </li>
 
                                 </ul>

@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\FactController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\ReviewController;
+use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\YoutubeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
@@ -90,6 +91,15 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/project/delete/{id}', [ProjectController::class, 'delete'])->name('project-delete');
         Route::get('/project/inactive/{id}', [ProjectController::class, 'inactive'])->name('project-inactive');
         Route::get('/project/active/{id}', [ProjectController::class, 'active'])->name('project-active');
+
+        Route::get('team/create', [TeamController::class, 'create'])->name('team-create');
+        Route::post('team/store', [TeamController::class, 'store'])->name('team-store');
+        Route::get('team', [TeamController::class, 'index'])->name('team');
+        Route::get('team/edit/{id}', [TeamController::class, 'edit'])->name('team-edit');
+        Route::post('team/update/{id}', [TeamController::class, 'update'])->name('team-update');
+        Route::get('team/delete/{id}', [TeamController::class, 'delete'])->name('team-delete');
+        Route::get('team/inactive/{id}', [TeamController::class, 'inactive'])->name('team-inactive');
+        Route::get('team/active/{id}', [TeamController::class, 'active'])->name('team-active');
 
     });
 });
