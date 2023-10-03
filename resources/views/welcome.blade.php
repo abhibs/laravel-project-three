@@ -444,97 +444,41 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-header">
-                    <h2>Recent Blog Posts</h2>
-                    <p>Consequatur libero assumenda est voluptatem est quidem illum et officia imilique qui vel
-                        architecto accusamus fugit aut qui distinctio</p>
+                    <h2>Project Posts</h2>
+
                 </div>
 
                 <div class="row gy-4">
+                    @foreach ($randprojectdatas as $item)
+                        <div class="col-xl-4 col-md-6">
+                            <article>
 
-                    <div class="col-xl-4 col-md-6">
-                        <article>
-
-                            <div class="post-img">
-                                <img src="{{ asset('user/assets/img/blog/blog-1.jpg') }}" alt=""
-                                    class="img-fluid">
-                            </div>
-
-                            <p class="post-category">Politics</p>
-
-                            <h2 class="title">
-                                <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
-                            </h2>
-
-                            <div class="d-flex align-items-center">
-                                <img src="{{ asset('user/assets/img/blog/blog-author.jpg') }}" alt=""
-                                    class="img-fluid post-author-img flex-shrink-0">
-                                <div class="post-meta">
-                                    <p class="post-author">Maria Doe</p>
-                                    <p class="post-date">
-                                        <time datetime="2022-01-01">Jan 1, 2022</time>
-                                    </p>
+                                <div class="post-img">
+                                    <img src="{{ asset($item->image) }}" alt="" class="img-fluid">
                                 </div>
-                            </div>
 
-                        </article>
-                    </div><!-- End post list item -->
 
-                    <div class="col-xl-4 col-md-6">
-                        <article>
+                                <h2 class="title">
+                                    <a href="blog-details.html">{{ $item->name }}</a>
+                                </h2>
 
-                            <div class="post-img">
-                                <img src="{{ asset('user/assets/img/blog/blog-2.jpg') }}" alt=""
-                                    class="img-fluid">
-                            </div>
-
-                            <p class="post-category">Sports</p>
-
-                            <h2 class="title">
-                                <a href="blog-details.html">Nisi magni odit consequatur autem nulla dolorem</a>
-                            </h2>
-
-                            <div class="d-flex align-items-center">
-                                <img src="{{ asset('user/assets/img/blog/blog-author-2.jpg') }}" alt=""
-                                    class="img-fluid post-author-img flex-shrink-0">
-                                <div class="post-meta">
-                                    <p class="post-author">Allisa Mayer</p>
-                                    <p class="post-date">
-                                        <time datetime="2022-01-01">Jun 5, 2022</time>
-                                    </p>
+                                <div class="d-flex align-items-center">
+                                    <img src="{{ !empty($admindata->image) ? url('storage/admin/' . $admindata->image) : url('no_image.jpg') }}"
+                                        alt="" class="img-fluid post-author-img flex-shrink-0">
+                                    <div class="post-meta">
+                                        <p class="post-author">{{ $admindata->name }}</p>
+                                        <p class="post-date">
+                                            <time
+                                                datetime="">{{ \Carbon\Carbon::parse($item->created_at)->format('d F Y') }}</time>
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
 
-                        </article>
-                    </div><!-- End post list item -->
+                            </article>
+                        </div><!-- End post list item -->
+                    @endforeach
 
-                    <div class="col-xl-4 col-md-6">
-                        <article>
 
-                            <div class="post-img">
-                                <img src="{{ asset('user/assets/img/blog/blog-3.jpg') }}" alt=""
-                                    class="img-fluid">
-                            </div>
-
-                            <p class="post-category">Entertainment</p>
-
-                            <h2 class="title">
-                                <a href="blog-details.html">Possimus soluta ut id suscipit ea ut in quo quia et
-                                    soluta</a>
-                            </h2>
-
-                            <div class="d-flex align-items-center">
-                                <img src="{{ asset('user/assets/img/blog/blog-author-3.jpg') }}" alt=""
-                                    class="img-fluid post-author-img flex-shrink-0">
-                                <div class="post-meta">
-                                    <p class="post-author">Mark Dower</p>
-                                    <p class="post-date">
-                                        <time datetime="2022-01-01">Jun 22, 2022</time>
-                                    </p>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div><!-- End post list item -->
 
                 </div><!-- End recent posts list -->
 

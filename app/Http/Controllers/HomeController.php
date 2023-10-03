@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Admin;
 use App\Models\Certificate;
 use App\Models\Client;
 use App\Models\Fact;
 use App\Models\Faq;
 use App\Models\Package;
 use App\Models\Profile;
+use App\Models\Project;
 use App\Models\Review;
 use App\Models\Team;
 use App\Models\Youtube;
@@ -28,8 +30,10 @@ class HomeController extends Controller
         $teamdatas = Team::where('status', 1)->get();
         $packagedatas = Package::where('status', 1)->get();
         $faqdatas = Faq::where('status', 1)->latest()->get();
+        $randprojectdatas = Project::where('status', 1)->inRandomOrder()->take(3)->get();
+        $admindata = Admin::first();
 
 
-        return view('welcome', compact('profile', 'about', 'clients', 'fact', 'youtube', 'certificates', 'reviews', 'teamdatas', 'packagedatas', 'faqdatas'));
+        return view('welcome', compact('profile', 'about', 'clients', 'fact', 'youtube', 'certificates', 'reviews', 'teamdatas', 'packagedatas', 'faqdatas', 'randprojectdatas', 'admindata'));
     }
 }
