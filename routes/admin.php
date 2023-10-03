@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\ClientController;
+use App\Http\Controllers\Admin\FactController;
 use App\Http\Controllers\Admin\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
@@ -38,6 +39,10 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/client/delete/{id}', [ClientController::class, 'delete'])->name('client-delete');
         Route::get('/client/inactive/{id}', [ClientController::class, 'inactive'])->name('client-inactive');
         Route::get('/client/active/{id}', [ClientController::class, 'active'])->name('client-active');
+
+
+        Route::get('/fact', [FactController::class, 'index'])->name('fact');
+        Route::post('/fact/update', [FactController::class, 'update'])->name('fact-update');
 
     });
 });

@@ -176,21 +176,21 @@
                     <div class="col-lg-6">
 
                         <div class="stats-item d-flex align-items-center">
-                            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p><strong>Happy Clients</strong> consequuntur quae diredo para mesta</p>
+                            <span data-purecounter-start="0" data-purecounter-end="{{ $fact->happyclient }}"
+                                data-purecounter-duration="10" class="purecounter"></span>
+                            <p><strong>Happy Clients</strong></p>
                         </div><!-- End Stats Item -->
 
                         <div class="stats-item d-flex align-items-center">
-                            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p><strong>Projects</strong> adipisci atque cum quia aut</p>
+                            <span data-purecounter-start="0" data-purecounter-end="{{ $fact->project }}"
+                                data-purecounter-duration="10" class="purecounter"></span>
+                            <p><strong>Projects</strong> </p>
                         </div><!-- End Stats Item -->
 
                         <div class="stats-item d-flex align-items-center">
-                            <span data-purecounter-start="0" data-purecounter-end="453" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p><strong>Hours Of Support</strong> aut commodi quaerat</p>
+                            <span data-purecounter-start="0" data-purecounter-end="{{ $fact->certificate }}"
+                                data-purecounter-duration="10" class="purecounter"></span>
+                            <p><strong>Certificate</strong></p>
                         </div><!-- End Stats Item -->
 
                     </div>
@@ -204,11 +204,7 @@
         <section id="call-to-action" class="call-to-action">
             <div class="container text-center" data-aos="zoom-out">
                 <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
-                <h3>Call To Action</h3>
-                <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                    anim id est laborum.</p>
-                <a class="cta-btn" href="#">Call To Action</a>
+
             </div>
         </section><!-- End Call To Action Section -->
 

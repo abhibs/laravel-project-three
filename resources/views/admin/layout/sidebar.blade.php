@@ -110,17 +110,15 @@
                         <li>
                             <a href="#sidebarProjects" data-bs-toggle="collapse">
                                 <i class="mdi mdi-briefcase-check-outline"></i>
-                                <span> Projects </span>
+                                <span> Fact </span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <div class="collapse" id="sidebarProjects">
                                 <ul class="nav-second-level">
                                     <li>
-                                        <a href="project-list.html">List</a>
+                                        <a href="{{ route('fact') }}">Update Fact</a>
                                     </li>
-                                    <li>
-                                        <a href="project-detail.html">Detail</a>
-                                    </li>
+
 
                                 </ul>
                             </div>
