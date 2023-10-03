@@ -491,8 +491,7 @@
 
                 <div class="section-header">
                     <h2>Contact</h2>
-                    <p>Nulla dolorum nulla nesciunt rerum facere sed ut inventore quam porro nihil id ratione ea sunt
-                        quis dolorem dolore earum</p>
+
                 </div>
 
                 <div class="row gx-lg-0 gy-4">
@@ -504,7 +503,7 @@
                                 <i class="bi bi-geo-alt flex-shrink-0"></i>
                                 <div>
                                     <h4>Location:</h4>
-                                    <p>A108 Adam Street, New York, NY 535022</p>
+                                    <p>Javalli Tudoor Thirthahalli Shimoga Karnataka 577226</p>
                                 </div>
                             </div><!-- End Info Item -->
 
@@ -512,7 +511,7 @@
                                 <i class="bi bi-envelope flex-shrink-0"></i>
                                 <div>
                                     <h4>Email:</h4>
-                                    <p>info@example.com</p>
+                                    <p>abhirambs97@gmail.com</p>
                                 </div>
                             </div><!-- End Info Item -->
 
@@ -520,7 +519,7 @@
                                 <i class="bi bi-phone flex-shrink-0"></i>
                                 <div>
                                     <h4>Call:</h4>
-                                    <p>+1 5589 55488 55</p>
+                                    <p>+91 9481187122</p>
                                 </div>
                             </div><!-- End Info Item -->
 
@@ -528,7 +527,7 @@
                                 <i class="bi bi-clock flex-shrink-0"></i>
                                 <div>
                                     <h4>Open Hours:</h4>
-                                    <p>Mon-Sat: 11AM - 23PM</p>
+                                    <p>Mon-Sat: 9:30 AM - 6:30 PM</p>
                                 </div>
                             </div><!-- End Info Item -->
                         </div>
@@ -536,30 +535,42 @@
                     </div>
 
                     <div class="col-lg-8">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <form action="{{ route('contact-store') }}" method="post" role="form"
+                            style="width: 100%;height: 100%;background: #fff;box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);padding: 30px;border-radius: 0 10px 10px 0;">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-6 form-group">
                                     <input type="text" name="name" class="form-control" id="name"
-                                        placeholder="Your Name" required>
+                                        placeholder="Your Name">
+                                    @error('name')
+                                        <span class="text-danger"> {{ $message }} </span>
+                                    @enderror
                                 </div>
                                 <div class="col-md-6 form-group mt-3 mt-md-0">
                                     <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Your Email" required>
+                                        placeholder="Your Email">
+                                    @error('email')
+                                        <span class="text-danger"> {{ $message }} </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group mt-3">
                                 <input type="text" class="form-control" name="subject" id="subject"
-                                    placeholder="Subject" required>
+                                    placeholder="Subject">
+                                @error('subject')
+                                    <span class="text-danger"> {{ $message }} </span>
+                                @enderror
                             </div>
                             <div class="form-group mt-3">
-                                <textarea class="form-control" name="message" rows="7" placeholder="Message" required></textarea>
+                                <textarea class="form-control" name="message" rows="7" placeholder="Message"></textarea>
+                                @error('message')
+                                    <span class="text-danger"> {{ $message }} </span>
+                                @enderror
                             </div>
-                            <div class="my-3">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
-                            </div>
-                            <div class="text-center"><button type="submit">Send Message</button></div>
+
+                            <div class="text-center"><button type="submit"
+                                    style="background: rgba(0, 131, 116, 0.8);border: 0;padding: 14px 45px;color: #fff;transition: 0.4s;border-radius: 50px;margin-top:5px;">Send
+                                    Message</button></div>
                         </form>
                     </div><!-- End Contact Form -->
 

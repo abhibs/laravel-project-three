@@ -6,6 +6,7 @@ use App\Models\About;
 use App\Models\Admin;
 use App\Models\Certificate;
 use App\Models\Client;
+use App\Models\Contact;
 use App\Models\Fact;
 use App\Models\Faq;
 use App\Models\Package;
@@ -15,6 +16,7 @@ use App\Models\Review;
 use App\Models\Team;
 use App\Models\Youtube;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class HomeController extends Controller
 {
@@ -35,5 +37,32 @@ class HomeController extends Controller
 
 
         return view('welcome', compact('profile', 'about', 'clients', 'fact', 'youtube', 'certificates', 'reviews', 'teamdatas', 'packagedatas', 'faqdatas', 'randprojectdatas', 'admindata'));
+    }
+
+    public function contact(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'subject' => 'required',
+            'message' => 'required',
+        ], [
+            'name.required' => 'Name is Required',
+            'email.required' => 'Email is Required',
+            'subject.required' => 'Subject is Required',
+            'message.required' => 'Message is Required',
+        ]);
+        Contact::insert([
+            'name' => $request->name,
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'message' => $request->message,
+            'created_at' => Carbon::now(),
+        ]);
+        $notification = array(
+            'message' => 'Contact Form Submitted Successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
     }
 }

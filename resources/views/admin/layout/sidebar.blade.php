@@ -300,17 +300,15 @@
                         <li>
                             <a href="#sidebarForms" data-bs-toggle="collapse">
                                 <i class="mdi mdi-bookmark-multiple-outline"></i>
-                                <span> Forms </span>
+                                <span> User Contact </span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <div class="collapse" id="sidebarForms">
                                 <ul class="nav-second-level">
                                     <li>
-                                        <a href="forms-elements.html">General Elements</a>
+                                        <a href="{{ route('user-contact') }}">User Contact List</a>
                                     </li>
-                                    <li>
-                                        <a href="forms-advanced.html">Advanced</a>
-                                    </li>
+
 
                                 </ul>
                             </div>
